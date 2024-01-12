@@ -1,0 +1,21 @@
+name: bloc_ui_generator
+description: "A Dart package for generation of typed BloC widgets like BlocBuilder and BlocListener for concrete implementations"
+version: 0.0.1
+
+environment:
+  sdk: '^3.0.0'
+
+dependencies:
+  analyzer: ^6.2.0
+  bloc_ui_annotation:
+    path: ../bloc_ui_annotation
+  build: ^2.4.1
+  flutter:
+    sdk: flutter
+  source_gen: ^1.5.0
+
+dev_dependencies:
+  build_runner: ^2.4.7
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0

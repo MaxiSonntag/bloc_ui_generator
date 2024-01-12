@@ -1,0 +1,16 @@
+name: bloc_ui_annotation
+description: "Annotations to be used with bloc_ui_generator"
+version: 1.0.0
+
+environment:
+  sdk: '>=3.2.3 <4.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0

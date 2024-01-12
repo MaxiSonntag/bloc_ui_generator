@@ -1,0 +1,19 @@
+targets:
+  $default:
+    builders:
+      bloc_ui_generator:
+        enabled: true
+        generate_for:
+          exclude:
+            - test
+            - example
+
+builders:
+  bloc_ui_generator:
+    target: ":bloc_ui_generator"
+    import: "package:bloc_ui_generator/builder.dart"
+    builder_factories: ["generateBlocWidgets"]
+    build_extensions: { ".dart": [".bloc_ui_generator.g.part"] }
+    auto_apply: dependents
+    build_to: cache
+    applies_builders: ["source_gen|combining_builder"] 
