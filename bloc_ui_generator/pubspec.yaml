@@ -8,8 +8,7 @@ environment:
 
 dependencies:
   analyzer: ^6.2.0
-  bloc_ui_annotation:
-    path: ../bloc_ui_annotation
+  bloc_ui_annotation: ^1.0.0
   build: ^2.4.1
   flutter:
     sdk: flutter

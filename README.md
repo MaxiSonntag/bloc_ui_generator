@@ -3,6 +3,7 @@ Provides [Dart Build System] builders for typed `BlocBuilder`s, `BlocListener`s,
 ## bloc\_ui\_generator
 
 - [Source Code](bloc_ui_generator)
+- Package: <https://pub.dev/packages/bloc_ui_generator>
 
 The core package providing code generators.
 
@@ -11,6 +12,7 @@ Import it into your pubspec `dev_dependencies` section
 ## bloc\_ui\_annotation
 
 - [Source Code](bloc_ui_annotation)
+- Package: <https://pub.dev/packages/bloc_ui_annotation>
 
 The annotation package which has no dependencies
 

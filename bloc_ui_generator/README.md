@@ -1,8 +1,12 @@
+<a href="https://pub.dev/packages/bloc_ui_generator">
+	<img src="https://img.shields.io/pub/v/bloc_ui_generator" alt="Pub Package Version"/>
+</a>
+
 Provides [Dart Build System] builders for typed `BlocBuilder`s, 
 `BlocListener`s, `BlocConsumer`s and `BlocSelector`s.
 
 The builders generate code when they find members annotated with classes defined
-in bloc_ui_annotation.
+in [package:bloc_ui_annotation].
 
 - To generate UI code for a class that extends `Bloc` or `Cubit`, annotate 
   it with `GenerateBlocUI`. You can provide the argument `selectorClasses` 
@@ -12,7 +16,7 @@ in bloc_ui_annotation.
 
 ## Setup
 
-To configure your project, you need to add `bloc_ui_annotation` as a dependency 
+To configure your project, you need to add [bloc_ui_annotation] as a dependency 
 to your pubspec.yaml file, as well as `bloc_ui_generator` as a 
 development dependency:
 
@@ -26,7 +30,7 @@ dev_dependencies:
 
 ## Example
 
-Given a library `exampl.dart` with a `CounterBloc` class extending `Bloc`, 
+Given a library `example.dart` with a `CounterBloc` class extending `Bloc`, 
 annotated with `GenerateBlocUI`:
 
 ```dart
@@ -129,3 +133,5 @@ classes does not automatically adapt the corresponding `BlocSelector`, even
 after re-running code generation.
 
 [dart build system]: https://github.com/dart-lang/build
+[bloc_ui_annotation]: https://pub.dev/packages/bloc_ui_annotation
+[package:bloc_ui_annotation]: https://pub.dev/packages/bloc_ui_annotation
