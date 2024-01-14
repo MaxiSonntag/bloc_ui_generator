@@ -11,7 +11,7 @@ targets:
 builders:
   bloc_ui_generator:
     target: ":bloc_ui_generator"
-    import: "package:bloc_ui_generator/builder.dart"
+    import: "package:bloc_ui_generator/bloc_ui_generator.dart"
     builder_factories: ["generateBlocWidgets"]
     build_extensions: { ".dart": [".bloc_ui_generator.g.part"] }
     auto_apply: dependents

@@ -1,0 +1,68 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Dart
+
+on:
+  push:
+    branches: [ "main" ]
+    
+env:
+  DART_VERSION: '3.2.3'
+
+jobs:
+  build-annotations:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: ${{env.DART_VERSION}}
+      - name: Install dependencies
+        run: dart pub get
+        working-directory: bloc_ui_annotation
+      - name: Check Publish Warnings
+        run: dart pub publish --dry-run
+        working-directory: bloc_ui_annotation
+  build-generator:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: ${{env.DART_VERSION}}
+      - name: Check Publish Warnings
+        run: dart pub publish --dry-run
+        working-directory: bloc_ui_generator
+  publish-annotations:
+    runs-on: ubuntu-latest
+    needs: [ build-annotations, build-generator ]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: ${{env.DART_VERSION}}
+      - name: Publish annotations
+        uses: k-paxian/dart-package-publisher@master
+        with:
+          relativePath: bloc_ui_annotation
+          credentialJson: ${{ secrets.PUB_CREDENTIAL_JSON }}
+          skipTests: true
+          flutter: false
+  publish-generator:
+    runs-on: ubuntu-latest
+    needs: [ build-annotations, build-generator ]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: ${{env.DART_VERSION}}
+      - name: Publish annotations
+        uses: k-paxian/dart-package-publisher@master
+        with:
+          relativePath: bloc_ui_generator
+          credentialJson: ${{ secrets.PUB_CREDENTIAL_JSON }}
+          skipTests: true
+          flutter: false

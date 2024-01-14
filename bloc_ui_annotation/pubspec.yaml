@@ -6,11 +6,6 @@ repository: https://github.com/MaxiSonntag/bloc_ui_generator/tree/main/bloc_ui_a
 environment:
   sdk: ">=3.0.0 <4.0.0"
 
-dependencies:
-  flutter:
-    sdk: flutter
-
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  flutter_lints: ^2.0.0
+  test: ^1.25.1
+  dart_flutter_team_lints: ^2.1.1
