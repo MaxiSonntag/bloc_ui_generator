@@ -1,3 +1,7 @@
+## 1.0.2+2
+
+* Fix example
+
 ## 1.0.2+1
 
 * Improve pub appearance
