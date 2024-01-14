@@ -6,7 +6,7 @@ import 'utils/bloc_classes.dart';
 
 import 'package:bloc_ui_annotation/bloc_ui_annotation.dart';
 
-part 'example_bloc.g.dart';
+part 'example.g.dart';
 
 @GenerateBlocUI(
   selectorClasses: {'String', 'double'},
