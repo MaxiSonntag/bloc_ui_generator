@@ -1,3 +1,7 @@
+## 1.0.3+1
+
+* Fix code generation for nullable states
+
 ## 1.0.2+2
 
 * Fix example
