@@ -6,7 +6,7 @@ abstract class SupertypeMatcher {
   /// Matches the [supertype] against a regular expression to determine if
   /// it's a `Bloc`
   static bool isBloc(String supertype) {
-    final blocRegex = RegExp(r'Bloc<\w+, \w+>');
+    final blocRegex = RegExp(r'Bloc<\w+, \w+\??>');
 
     return blocRegex.firstMatch(supertype) != null;
   }
@@ -14,7 +14,7 @@ abstract class SupertypeMatcher {
   /// Matches the [supertype] against a regular expression to determine if
   /// it's a `Cubit`
   static bool isCubit(String supertype) {
-    final cubitRegex = RegExp(r'Cubit<\w+>');
+    final cubitRegex = RegExp(r'Cubit<\w+\??>');
 
     return cubitRegex.firstMatch(supertype) != null;
   }

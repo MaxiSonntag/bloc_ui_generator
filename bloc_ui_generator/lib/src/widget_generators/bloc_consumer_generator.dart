@@ -31,17 +31,17 @@ final class BlocConsumerGenerator extends WidgetGenerator {
 
   String get blocElementState {
     final supertype =
-        blocElement.supertype!.getDisplayString(withNullability: false);
+        blocElement.supertype!.getDisplayString(withNullability: true);
 
     if (SupertypeMatcher.isBloc(supertype)) {
-      final regex = RegExp(r'Bloc<\w+, (\w+)>');
+      final regex = RegExp(r'Bloc<\w+, (\w+\??)>');
       final match = regex.firstMatch(supertype);
 
       if (match != null) {
         return match.group(1)!;
       }
     } else if (SupertypeMatcher.isCubit(supertype)) {
-      final regex = RegExp(r'Cubit<(\w+)>');
+      final regex = RegExp(r'Cubit<(\w+\??)>');
       final match = regex.firstMatch(supertype);
 
       if (match != null) {
