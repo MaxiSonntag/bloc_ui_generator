@@ -21,6 +21,7 @@ final class BlocBuilderGenerator extends WidgetGenerator {
     buffer.writeln('    super.key,');
     buffer.writeln('    required super.builder,');
     buffer.writeln('    super.buildWhen,');
+    buffer.writeln('    super.bloc,');
     buffer.writeln('  });');
     buffer.writeln('}');
   }

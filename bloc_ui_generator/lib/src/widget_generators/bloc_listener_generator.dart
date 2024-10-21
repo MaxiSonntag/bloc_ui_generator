@@ -20,6 +20,7 @@ final class BlocListenerGenerator extends WidgetGenerator {
     buffer.writeln('  const ${blocElement.name}Listener({');
     buffer.writeln('    super.key,');
     buffer.writeln('    required super.listener,');
+    buffer.writeln('    super.bloc,');
     buffer.writeln('    super.listenWhen,');
     buffer.writeln('    super.child,');
     buffer.writeln('  });');

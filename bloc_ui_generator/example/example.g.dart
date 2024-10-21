@@ -11,6 +11,7 @@ class CounterBlocBuilder extends BlocBuilder<CounterBloc, int> {
     super.key,
     required super.builder,
     super.buildWhen,
+    super.bloc,
   });
 }
 
@@ -18,6 +19,7 @@ class CounterBlocListener extends BlocListener<CounterBloc, int> {
   const CounterBlocListener({
     super.key,
     required super.listener,
+    super.bloc,
     super.listenWhen,
     super.child,
   });
@@ -28,6 +30,7 @@ class CounterBlocConsumer extends BlocConsumer<CounterBloc, int> {
     super.key,
     required super.builder,
     required super.listener,
+    super.bloc,
     super.buildWhen,
     super.listenWhen,
   });
@@ -38,6 +41,7 @@ class CounterBlocStringSelector extends BlocSelector<CounterBloc, int, String> {
     super.key,
     required super.selector,
     required super.builder,
+    super.bloc,
   });
 }
 
@@ -46,5 +50,6 @@ class CounterBlocDoubleSelector extends BlocSelector<CounterBloc, int, double> {
     super.key,
     required super.selector,
     required super.builder,
+    super.bloc,
   });
 }

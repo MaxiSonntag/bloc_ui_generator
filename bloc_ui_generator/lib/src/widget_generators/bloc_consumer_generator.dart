@@ -21,6 +21,7 @@ final class BlocConsumerGenerator extends WidgetGenerator {
     buffer.writeln('    super.key,');
     buffer.writeln('    required super.builder,');
     buffer.writeln('    required super.listener,');
+    buffer.writeln('    super.bloc,');
     buffer.writeln('    super.buildWhen,');
     buffer.writeln('    super.listenWhen,');
     buffer.writeln('  });');

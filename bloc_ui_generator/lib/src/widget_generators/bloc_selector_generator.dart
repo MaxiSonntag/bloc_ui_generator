@@ -27,6 +27,7 @@ final class BlocSelectorGenerator extends WidgetGenerator {
       buffer.writeln('    super.key,');
       buffer.writeln('    required super.selector,');
       buffer.writeln('    required super.builder,');
+      buffer.writeln('    super.bloc,');
       buffer.writeln('  });');
       buffer.writeln('}');
     }
