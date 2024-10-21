@@ -17,11 +17,13 @@ class BlocBuilder<Bloc, State> {
   final Key? key;
   final BlocWidgetBuilder<State> builder;
   final BlocBuilderCondition<State>? buildWhen;
+  final Bloc? bloc;
 
   const BlocBuilder({
     this.key,
     required this.builder,
     this.buildWhen,
+    this.bloc,
   });
 }
 
@@ -29,6 +31,7 @@ class BlocListener<Bloc, State> {
   final Key? key;
   final BlocWidgetBuilder<State> listener;
   final BlocBuilderCondition<State>? listenWhen;
+  final Bloc? bloc;
   final dynamic child;
 
   const BlocListener({
@@ -36,6 +39,7 @@ class BlocListener<Bloc, State> {
     required this.listener,
     this.listenWhen,
     this.child,
+    this.bloc,
   });
 }
 
@@ -45,6 +49,7 @@ class BlocConsumer<Bloc, State> {
   final BlocWidgetBuilder<State> listener;
   final BlocBuilderCondition<State>? buildWhen;
   final BlocBuilderCondition<State>? listenWhen;
+  final Bloc? bloc;
 
   const BlocConsumer({
     this.key,
@@ -52,6 +57,7 @@ class BlocConsumer<Bloc, State> {
     required this.listener,
     this.buildWhen,
     this.listenWhen,
+    this.bloc,
   });
 }
 
@@ -59,10 +65,12 @@ class BlocSelector<Bloc, State, Target> {
   final Key? key;
   final BlocWidgetSelector<State, Target> selector;
   final BlocWidgetBuilder<Target> builder;
+  final Bloc? bloc;
 
   const BlocSelector({
     this.key,
     required this.selector,
     required this.builder,
+    this.bloc,
   });
 }
