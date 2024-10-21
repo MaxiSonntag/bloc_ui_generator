@@ -53,3 +53,25 @@ class CounterBlocDoubleSelector extends BlocSelector<CounterBloc, int, double> {
     super.bloc,
   });
 }
+
+class CounterProvider extends BlocProvider<CounterBloc> {
+  const CounterProvider({
+    required super.create,
+    super.key,
+    super.child,
+    super.lazy = true,
+  });
+
+  const CounterProvider.value({
+    required super.value,
+    super.key,
+    super.child,
+  }) : super.value();
+}
+
+extension CounterBlocContextExtension on BuildContext {
+  CounterBloc get readTestBloc => read<CounterBloc>();
+  CounterBloc get watchTestBloc => watch<CounterBloc>();
+  R selectTestBloc<R>(R Function(CounterBloc value) selector) =>
+      select<CounterBloc, R>(selector);
+}
