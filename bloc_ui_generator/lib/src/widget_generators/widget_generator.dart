@@ -6,7 +6,9 @@ import 'package:analyzer/dart/element/element.dart';
 import 'package:bloc_ui_generator/src/widget_generators/bloc_builder_generator.dart';
 import 'package:bloc_ui_generator/src/widget_generators/bloc_consumer_generator.dart';
 import 'package:bloc_ui_generator/src/widget_generators/bloc_listener_generator.dart';
+import 'package:bloc_ui_generator/src/widget_generators/bloc_provider_generator.dart';
 import 'package:bloc_ui_generator/src/widget_generators/bloc_selector_generator.dart';
+import 'package:bloc_ui_generator/src/widget_generators/context_extension_generator.dart';
 
 abstract base class WidgetGenerator {
   final StringBuffer buffer;
@@ -48,6 +50,14 @@ abstract base class WidgetGenerator {
             blocElement: blocElement,
             selectorClasses: selectorClasses,
           ),
+        Generators.provider => BlocProviderGenerator(
+            buffer: buffer,
+            blocElement: blocElement,
+          ),
+        Generators.contextExtensions => ContextExtensionsGenerator(
+            buffer: buffer,
+            blocElement: blocElement,
+          ),
       };
 
   void generateCode();
@@ -59,4 +69,6 @@ enum Generators {
   listener,
   consumer,
   selector,
+  provider,
+  contextExtensions,
 }

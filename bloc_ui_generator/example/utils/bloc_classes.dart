@@ -7,11 +7,18 @@ abstract class Bloc<Event, State> {
   void on<Event>(void Function(Event event, State emit)) {}
 }
 
-typedef BuildContext = void;
+abstract class BuildContext {
+  T read<T>();
+  T watch<T>();
+  R select<T, R>(R Function(T value) selector);
+}
+
+typedef Widget = void;
 typedef Key = void;
 typedef BlocWidgetBuilder<S> = void Function(BuildContext context, S state);
 typedef BlocWidgetSelector<S, T> = T Function(S state);
 typedef BlocBuilderCondition<S> = bool Function(S previous, S current);
+
 
 class BlocBuilder<Bloc, State> {
   final Key? key;
@@ -73,4 +80,29 @@ class BlocSelector<Bloc, State, Target> {
     required this.builder,
     this.bloc,
   });
+}
+
+class BlocProvider<T> {
+  final Widget? child;
+  final bool lazy;
+  // ignore: unused_field
+  final T Function(BuildContext context)? _create;
+  // ignore: unused_field
+  final T? _value;
+
+  const BlocProvider({
+    required T Function(BuildContext context) create,
+    Key? key,
+    this.child,
+    this.lazy = true,
+  })  : _create = create,
+        _value = null;
+
+  const BlocProvider.value({
+    required T value,
+    Key? key,
+    this.child,
+  })  : _value = value,
+        _create = null,
+        lazy = true;
 }

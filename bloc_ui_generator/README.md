@@ -3,7 +3,8 @@
 </a>
 
 Provides [Dart Build System] builders for typed `BlocBuilder`s, 
-`BlocListener`s, `BlocConsumer`s and `BlocSelector`s.
+`BlocListener`s, `BlocConsumer`s, `BlocSelector`s and `BlocProvider`s, as well as `BuildContext` 
+extensions fur `read`, `watch` and `select`.
 
 The builders generate code when they find members annotated with classes defined
 in [package:bloc_ui_annotation].
@@ -67,6 +68,7 @@ class CounterBlocBuilder extends BlocBuilder<CounterBloc, int> {
     super.key,
     required super.builder,
     super.buildWhen,
+    super.bloc,
   });
 }
 
@@ -74,6 +76,7 @@ class CounterBlocListener extends BlocListener<CounterBloc, int> {
   const CounterBlocListener({
     super.key,
     required super.listener,
+    super.bloc,
     super.listenWhen,
     super.child,
   });
@@ -84,6 +87,7 @@ class CounterBlocConsumer extends BlocConsumer<CounterBloc, int> {
     super.key,
     required super.builder,
     required super.listener,
+    super.bloc,
     super.buildWhen,
     super.listenWhen,
   });
@@ -95,7 +99,30 @@ class CounterBlocStringSelector
     super.key,
     required super.selector,
     required super.builder,
+    super.bloc,
   });
+}
+
+class CounterBlocProvider extends BlocProvider<CounterBloc> {
+  const CounterBlocProvider({
+    required super.create,
+    super.key,
+    super.child,
+    super.lazy = true,
+  });
+
+  const CounterBlocProvider.value({
+    required super.value,
+    super.key,
+    super.child,
+  }) : super.value();
+}
+
+extension CounterBlocContextExtension on BuildContext {
+  CounterBloc get readTestBloc => read<CounterBloc>();
+  CounterBloc get watchTestBloc => watch<CounterBloc>();
+  R selectCounterBloc<R>(R Function(CounterBloc value) selector) =>
+          select<CounterBloc, R>(selector);
 }
 ```
 
@@ -110,7 +137,8 @@ Run `dart run build_runner build` in the package directory.
 
 The only annotation required to use this package is `GenerateBlocUI`. When
 applied to a class (in a correctly configured package), typed `BlocBuilder`, 
-`BlocListener`, and `BlocConsumer` code will be generated when you build. 
+`BlocListener`, `BlocConsumer`, `BlocProvider` and `BuildContext` extension code 
+will be generated when you build. 
 Additionally, you can provide a `Set<String>` to the `selectorClasses` 
 parameter of `GenerateBlocUI`, to generate one or more `BlocSelector`s as well.
 
