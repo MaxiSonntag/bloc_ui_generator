@@ -1,3 +1,9 @@
+## 1.0.4
+
+* Add `bloc` parameter to generated UI elements
+* Add BuildContext extensions generation
+* Add BlocProvider generation
+
 ## 1.0.3+1
 
 * Fix code generation for nullable states
