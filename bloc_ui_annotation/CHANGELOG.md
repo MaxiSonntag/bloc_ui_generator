@@ -1,3 +1,9 @@
+# 1.0.5
+
+* Require Dart 3.6.0
+* Require ´analyzer: ^7.1.0´
+* Require ´source_gen: ^2.0.0´
+
 ## 1.0.4
 
 * Add `bloc` parameter to generated UI elements
@@ -24,4 +30,4 @@
 
 ## 1.0.0
 
-* Initial release including `GenerateBlocUI` annotation
+* Initial release including generators for `BlocBuilder`, `BlocListener`, `BlocConsumer` and `BlocSelector`
