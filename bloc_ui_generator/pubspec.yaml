@@ -4,13 +4,13 @@ version: 1.0.4
 repository: https://github.com/MaxiSonntag/bloc_ui_generator/tree/main/bloc_ui_generator
 
 environment:
-  sdk: ">=3.0.0 <4.0.0"
+  sdk: ^3.6.0
 
 dependencies:
-  analyzer: ^6.2.0
+  analyzer: ^7.1.0
   bloc_ui_annotation: ^1.0.3+1
   build: ^2.4.1
-  source_gen: ^1.5.0
+  source_gen: ^2.0.0
 
 dependency_overrides:
   bloc_ui_annotation:

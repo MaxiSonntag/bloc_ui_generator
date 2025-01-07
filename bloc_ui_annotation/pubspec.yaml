@@ -4,7 +4,7 @@ version: 1.0.4
 repository: https://github.com/MaxiSonntag/bloc_ui_generator/tree/main/bloc_ui_annotation
 
 environment:
-  sdk: ">=3.0.0 <4.0.0"
+  sdk: ^3.6.0
 
 dev_dependencies:
   test: ^1.25.1
