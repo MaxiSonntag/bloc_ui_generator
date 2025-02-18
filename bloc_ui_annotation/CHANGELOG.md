@@ -1,4 +1,8 @@
-# 1.0.5
+# 1.0.7
+
+* Ignore generated files in test coverage
+
+# 1.0.6
 
 * Require Dart 3.6.0
 * Require ´analyzer: ^7.1.0´
