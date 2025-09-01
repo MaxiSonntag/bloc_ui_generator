@@ -1,3 +1,7 @@
+# 1.0.8
+
+* Update dependencies
+
 # 1.0.7
 
 * Ignore generated files in test coverage
