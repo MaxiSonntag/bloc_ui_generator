@@ -1,3 +1,17 @@
+# 1.0.8
+
+* Update dependencies
+
+# 1.0.7
+
+* Ignore generated files in test coverage
+
+# 1.0.6
+
+* Require Dart 3.6.0
+* Require ´analyzer: ^7.1.0´
+* Require ´source_gen: ^2.0.0´
+
 ## 1.0.4
 
 * Add `bloc` parameter to generated UI elements

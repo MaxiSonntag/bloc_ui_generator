@@ -25,6 +25,9 @@ class BlocUIGenerator extends GeneratorForAnnotation<GenerateBlocUI> {
 
     final buffer = StringBuffer();
 
+    buffer.writeln('// coverage:ignore-file');
+    buffer.writeln();
+
     final supertype =
         element.supertype?.getDisplayString(withNullability: false);
     if (supertype != null &&

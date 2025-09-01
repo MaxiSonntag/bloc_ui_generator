@@ -1,10 +1,10 @@
 name: bloc_ui_annotation
 description: "Annotations to be used with `bloc_ui_generator`-package (for BloC UI generation)"
-version: 1.0.4
+version: 1.0.8
 repository: https://github.com/MaxiSonntag/bloc_ui_generator/tree/main/bloc_ui_annotation
 
 environment:
-  sdk: ">=3.0.0 <4.0.0"
+  sdk: ^3.6.0
 
 dev_dependencies:
   test: ^1.25.1
