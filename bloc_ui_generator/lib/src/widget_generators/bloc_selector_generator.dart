@@ -33,11 +33,14 @@ final class BlocSelectorGenerator extends WidgetGenerator {
     }
   }
 
-  String get blocName => blocElement.name;
+  String get blocName {
+    if (blocElement.name3 != null) return blocElement.name3!;
+    throw 'Unable to read Bloc name';
+  }
 
   String get blocElementState {
     final supertype =
-        blocElement.supertype!.getDisplayString(withNullability: true);
+        blocElement.supertype!.getDisplayString();
 
     if (SupertypeMatcher.isBloc(supertype)) {
       final regex = RegExp(r'Bloc<\w+, (\w+\??)>');
@@ -55,6 +58,6 @@ final class BlocSelectorGenerator extends WidgetGenerator {
       }
     }
 
-    throw 'Could not extract state from supertype $supertype of ${blocElement.name}';
+    throw 'Could not extract state from supertype $supertype of ${blocName}';
   }
 }

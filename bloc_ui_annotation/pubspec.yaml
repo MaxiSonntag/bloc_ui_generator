@@ -1,6 +1,6 @@
 name: bloc_ui_annotation
 description: "Annotations to be used with `bloc_ui_generator`-package (for BloC UI generation)"
-version: 1.0.8
+version: 1.0.9
 repository: https://github.com/MaxiSonntag/bloc_ui_generator/tree/main/bloc_ui_annotation
 
 environment:
