@@ -4,7 +4,7 @@
 
 import 'dart:async';
 
-import 'package:analyzer/dart/element/element.dart';
+import 'package:analyzer/dart/element/element2.dart';
 import 'package:bloc_ui_annotation/bloc_ui_annotation.dart';
 import 'package:bloc_ui_generator/src/utils/supertype_matcher.dart';
 import 'package:bloc_ui_generator/src/widget_generators/widget_generator.dart';
@@ -14,10 +14,10 @@ import 'package:build/build.dart';
 class BlocUIGenerator extends GeneratorForAnnotation<GenerateBlocUI> {
   @override
   FutureOr<String> generateForAnnotatedElement(
-      Element element, ConstantReader annotation, BuildStep buildStep) {
-    if (element is! ClassElement) {
+      Element2 element, ConstantReader annotation, BuildStep buildStep) {
+    if (element is! ClassElement2) {
       throw InvalidGenerationSourceError(
-        'Annotated element is not a class: ${element.name}',
+        'Annotated element is not a class: ${element.name3}',
         element: element,
         todo: 'Use @GenerateBlocUI annotation on a class',
       );
@@ -29,7 +29,7 @@ class BlocUIGenerator extends GeneratorForAnnotation<GenerateBlocUI> {
     buffer.writeln();
 
     final supertype =
-        element.supertype?.getDisplayString(withNullability: false);
+        element.supertype?.getDisplayString();
     if (supertype != null &&
         (SupertypeMatcher.isBloc(supertype) ||
             SupertypeMatcher.isCubit(supertype))) {
@@ -50,7 +50,7 @@ class BlocUIGenerator extends GeneratorForAnnotation<GenerateBlocUI> {
       }
     } else {
       throw InvalidGenerationSourceError(
-          'Annotated class ${element.name} does not extend Bloc or Cubit '
+          'Annotated class ${element.name3} does not extend Bloc or Cubit '
           '– extends $supertype',
           element: element,
           todo:

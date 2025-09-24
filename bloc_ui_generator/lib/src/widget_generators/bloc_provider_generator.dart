@@ -29,5 +29,8 @@ final class BlocProviderGenerator extends WidgetGenerator {
     buffer.writeln('}');
   }
 
-  String get blocName => blocElement.name;
+  String get blocName {
+    if (blocElement.name3 != null) return blocElement.name3!;
+    throw 'Unable to read Bloc name';
+  }
 }

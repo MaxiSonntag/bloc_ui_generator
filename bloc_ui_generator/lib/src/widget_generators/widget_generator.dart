@@ -2,7 +2,7 @@
 // this source code is governed by a BSD-style license that can be found
 // in the LICENSE file.
 
-import 'package:analyzer/dart/element/element.dart';
+import 'package:analyzer/dart/element/element2.dart';
 import 'package:bloc_ui_generator/src/widget_generators/bloc_builder_generator.dart';
 import 'package:bloc_ui_generator/src/widget_generators/bloc_consumer_generator.dart';
 import 'package:bloc_ui_generator/src/widget_generators/bloc_listener_generator.dart';
@@ -12,7 +12,7 @@ import 'package:bloc_ui_generator/src/widget_generators/context_extension_genera
 
 abstract base class WidgetGenerator {
   final StringBuffer buffer;
-  final ClassElement blocElement;
+  final ClassElement2 blocElement;
 
   WidgetGenerator({
     required this.buffer,
@@ -29,7 +29,7 @@ abstract base class WidgetGenerator {
   factory WidgetGenerator.forType({
     required Generators generator,
     required StringBuffer buffer,
-    required ClassElement blocElement,
+    required ClassElement2 blocElement,
     Set<String> selectorClasses = const <String>{},
   }) =>
       switch (generator) {

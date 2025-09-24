@@ -1,12 +1,16 @@
-# 1.0.8
+## 1.0.9
+
+* Require ´source_gen: ^3.0.0´
+
+## 1.0.8
 
 * Update dependencies
 
-# 1.0.7
+## 1.0.7
 
 * Ignore generated files in test coverage
 
-# 1.0.6
+## 1.0.6
 
 * Require Dart 3.6.0
 * Require ´analyzer: ^7.1.0´
