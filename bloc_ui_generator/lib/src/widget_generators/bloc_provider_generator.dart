@@ -13,7 +13,8 @@ final class BlocProviderGenerator extends WidgetGenerator {
 
   @override
   void generateCode() {
-    buffer.writeln('class ${blocName}Provider extends BlocProvider<$blocName> {');
+    buffer
+        .writeln('class ${blocName}Provider extends BlocProvider<$blocName> {');
     buffer.writeln('  const ${blocName}Provider({');
     buffer.writeln('    required super.create,');
     buffer.writeln('    super.key,');
@@ -29,8 +30,5 @@ final class BlocProviderGenerator extends WidgetGenerator {
     buffer.writeln('}');
   }
 
-  String get blocName {
-    if (blocElement.name3 != null) return blocElement.name3!;
-    throw 'Unable to read Bloc name';
-  }
+  String get blocName => blocElement.displayName;
 }

@@ -1,3 +1,8 @@
+## 1.0.10
+
+* Require ´analyzer: ^8.0.0´
+* Require ´source_gen: ^4.0.0´
+
 ## 1.0.9
 
 * Require ´source_gen: ^3.0.0´
