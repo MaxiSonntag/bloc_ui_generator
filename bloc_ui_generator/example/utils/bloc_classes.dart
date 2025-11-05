@@ -1,10 +1,12 @@
-/// Ignore this class – placeholder to avoid dependency on `bloc`-package
+// ignore_for_file: avoid_shadowing_type_parameters, avoid_types_as_parameter_names
+// Ignore this class – placeholder to avoid dependency on `bloc`-package
+
 abstract class Bloc<Event, State> {
   State state;
 
   Bloc(this.state);
 
-  void on<Event>(void Function(Event event, State emit)) {}
+  void on<Event>(void Function(Event event, State emit) function) {}
 }
 
 abstract class BuildContext {

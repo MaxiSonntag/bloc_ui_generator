@@ -16,13 +16,11 @@ final class ContextExtensionsGenerator extends WidgetGenerator {
     buffer.writeln('extension ${blocName}ContextExtension on BuildContext {');
     buffer.writeln('  $blocName get read$blocName => read<$blocName>();');
     buffer.writeln('  $blocName get watch$blocName => watch<$blocName>();');
-    buffer.writeln('  R select$blocName<R>(R Function($blocName value) selector) =>');
+    buffer.writeln(
+        '  R select$blocName<R>(R Function($blocName value) selector) =>');
     buffer.writeln('    select<$blocName, R>(selector);');
     buffer.writeln('}');
   }
 
-  String get blocName {
-    if (blocElement.name3 != null) return blocElement.name3!;
-    throw 'Unable to read Bloc name';
-  }
+  String get blocName => blocElement.displayName;
 }
