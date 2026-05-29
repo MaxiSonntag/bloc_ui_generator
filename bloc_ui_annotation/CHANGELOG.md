@@ -1,3 +1,12 @@
+## 1.0.12
+
+* Require ´analyzer: '>=9.0.0 <14.0.0'´
+
+## 1.0.11
+
+* Require ´analyzer: ^9.0.0´
+* Require ´build: ^4.0.0´
+
 ## 1.0.10
 
 * Require ´analyzer: ^8.0.0´
